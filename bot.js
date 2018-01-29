@@ -24,4 +24,4 @@ client.on ('message', message => {
   }});
  
 //LOGIN TOKEN-------------------------------------------------------------------
-client.login('NDA3NTkzODIzOTIxNzY2NDEw.DVDz5w.iOagD2GVHZ7BwgXInq3IO8T1qUA');
+client.login(process.env.BOT_TOKEN);
