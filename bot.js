@@ -15,7 +15,7 @@ client.on ('message', message => {
   if (message.content === prefix + "schem") {
         let schem = args.slice(1).join(" ");
           
-              NOTIFY_CHANNEL.send(schem);
+              NOTIFY_CHANNEL.sendMessage(schem);
                    
                   
 }});
