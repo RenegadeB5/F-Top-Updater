@@ -10,7 +10,7 @@ client.on('ready', () => {
     client.user.setGame("Exiled Hack! " + client.guilds.array().length + " Servers");
     console.log('successfully Logged In As schem Bot!');
     NOTIFY_CHANNEL = client.channels.find("name", "schems"); // Channel to send notification
-});   
+   
 client.on ('message', message => {
   if (message.content === prefix + "schem") {
         let schem = args.slice(1) + ".schematic";
@@ -20,7 +20,7 @@ client.on ('message', message => {
                     "./schems/schem"
                    ]
                   })
-  }});
+  }}}));
  
 //LOGIN TOKEN-------------------------------------------------------------------
 client.login(process.env.BOT_TOKEN);
