@@ -13,11 +13,11 @@ client.on('ready', () => {
 
 client.on ('message', message => {
   if (message.content === prefix + "schem") {
-        let schem = args.slice(1).join(" ");
+        let schem = args.slice(1) + ".schematic";
           
               NOTIFY_CHANNEL.sendMessage(`Here you go.`, {
   files: [
-    "./schems/schem + ".schematic""
+    "./schems/schem"
   ]
 })
   }});
