@@ -17,7 +17,7 @@ client.on ('message', message => {
           
               NOTIFY_CHANNEL.sendMessage(`Here you go.`, {
                   files: [
-                    "./schems/schem"
+                    "./schems/(schem)"
                    ]
                   })
 }});
