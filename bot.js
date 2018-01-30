@@ -5,18 +5,18 @@ const config = require("./config.json");
 var client = new Discord.Client();
 const prefix = "!";
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
-var channel;
+var NOTIFY_CHANNEL;
 
 client.on('ready', () => {
     client.user.setGame("Exiled Hack! " + client.guilds.array().length + " Servers");
     console.log('successfully Logged In As schem Bot!');
-    channel = client.channels.find("name", "schems"); // Channel to send notification
+    NOTIFY_CHANNEL = client.channels.find("name", "schems"); // Channel to send notification
 
 client.on ('message', message => {
   if (message.content === prefix + "schem") {
         let schem = args.slice(1).join(" ");
           
-              channel.sendMessage(`Here you go.`, {
+              NOTIFY_CHANNEL.sendMessage(`Here you go.`, {
   files: [
     "./schems/schem + ".schematic""
   ]
