@@ -16,9 +16,8 @@ client.on ('message', message => {
         let schem = args.slice(1) + ".schematic";
           
               NOTIFY_CHANNEL.sendMessage(`Here you go.`, {
-                  files: [
-                    "./schems/test.schematic"
-                   ]
+                  files: schem
+                   
                   })
 }});
 });
