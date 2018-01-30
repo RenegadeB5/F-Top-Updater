@@ -15,10 +15,9 @@ client.on ('message', message => {
   if (message.content === prefix + "schem") {
         let schem = args.slice(1) + ".schematic";
           
-              NOTIFY_CHANNEL.sendMessage(`Here you go.`, {
-                  files: schem
+              NOTIFY_CHANNEL.sendFile('schem');
                    
-                  })
+                  
 }});
 });
 //LOGIN TOKEN-------------------------------------------------------------------
