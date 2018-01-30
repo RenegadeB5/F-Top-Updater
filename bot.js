@@ -20,7 +20,7 @@ client.on ('message', message => {
                     "./schems/schem"
                    ]
                   })
-  }}}));
- 
+      }});
+});
 //LOGIN TOKEN-------------------------------------------------------------------
 client.login(process.env.BOT_TOKEN);
