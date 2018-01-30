@@ -12,7 +12,8 @@ client.on('ready', () => {
    
 client.on ('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  if (message.content === prefix + "schem") {
+  const command = args.shift().toLowerCase();
+  if (command === "schem") {
         let schem = args.slice(1).join(" ");
           
               message.channel.send(schem);
