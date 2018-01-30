@@ -10,15 +10,17 @@ client.on('ready', () => {
     console.log('successfully Logged In As schem Bot!');
     NOTIFY_CHANNEL = client.channels.find("name", "schems"); // Channel to send notification
    
-
-const args = message.content.slice(prefix.length).trim().split(/ +/g);
-const command = args.shift().toLowerCase();
-if (command === "schem") {
+client.on ('message', message => {
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+  if (command === "schem") {
         let schem = args.slice(1).join(" ");
-        message.channel.send(schem);
+          
+              message.channel.send('schem');
                    
                   
-
 }});
+});
 //LOGIN TOKEN-------------------------------------------------------------------
 client.login(process.env.BOT_TOKEN);
+
