@@ -2,7 +2,7 @@
 //anything with "//" infront of it is treated as a comment, it doesn't affect the code of the bot
 const Discord = require('discord.js');
 const config = require("./config.json");
-var client = new Discord.Client();
+const client = new Discord.Client();
 const prefix = "!";
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
 var channel;
