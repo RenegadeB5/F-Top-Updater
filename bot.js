@@ -4,6 +4,7 @@ const Discord = require('discord.js');
 var client = new Discord.Client();
 const prefix = "!";
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
+const message = args.shift().toLowerCase();
 var NOTIFY_CHANNEL;
 
 client.on('ready', () => {
