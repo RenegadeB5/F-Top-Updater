@@ -16,7 +16,7 @@ client.on ('message', message => {
   if (command === "schem") {
         let schem = args.slice(1).join(" ");
           
-              message.channel.send('schem');
+        message.channel.send(schem);
                    
                   
 }});
