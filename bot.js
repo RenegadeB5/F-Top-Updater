@@ -19,7 +19,7 @@ client.on ('message', message => {
                   files: [
                     "./schems/schem"
                    ]
-                })
+                }})
   }});
  
 //LOGIN TOKEN-------------------------------------------------------------------
