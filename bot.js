@@ -13,9 +13,9 @@ client.on('ready', () => {
 client.on ('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   if (message.content === prefix + "schem") {
-        let schem = args.slice(1) + ".schematic";
+        let schem = args.slice(1).join(" .schematic");
           
-              NOTIFY_CHANNEL.sendFile('schem');
+              NOTIFY_CHANNEL.sendFile(schem);
                    
                   
 }});
