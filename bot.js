@@ -3,10 +3,10 @@
 const Discord = require('discord.js');
 var client = new Discord.Client();
 const prefix = "!";
-let args = message.content.slice(prefix.length).trim().split(/ +/g);
 var NOTIFY_CHANNEL;
 
 client.on('ready', () => {
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
     client.user.setGame("Exiled Hack! " + client.guilds.array().length + " Servers");
     console.log('successfully Logged In As schem Bot!');
     NOTIFY_CHANNEL = client.channels.find("name", "schems"); // Channel to send notification
