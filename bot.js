@@ -16,7 +16,7 @@ client.on ('message', message => {
   if (command === "schem") {
         let schem = args.slice(0).join(" ");
         
-        message.channel.send((schem) + '.schematic');
+        client.sendFile((schem) + '.schematic');
                    
                   
   }
