@@ -19,7 +19,7 @@ client.on ('message', message => {
         message.channel.send(schem);
                    
                   
-  });
+  })
 }});
 //LOGIN TOKEN-------------------------------------------------------------------
 client.login(process.env.BOT_TOKEN);
