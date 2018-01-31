@@ -16,7 +16,12 @@ client.on ('message', message => {
   if (command === "schem") {
         let schem = args.slice(0).join(" ");
         
-        client.sendFile((schem) + '.schematic');
+        client.send.message(`Testing message.`, {
+          files: [
+            schem + '.schematic'
+          ]
+        })
+
                    
                   
   }
