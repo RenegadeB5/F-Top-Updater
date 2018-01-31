@@ -13,10 +13,10 @@ client.on('ready', () => {
 client.on ('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();  
-  const testFolder = './tests/';
+  const testFolder = './schems/';
   const fs = require('fs');
   if (command === "raid") {
-      fs.readdirSync(schems).forEach(file => {
+      fs.readdirSync(testFolder).forEach(file => {
           NOTIFY_CHANNEL.sendMessage(file);
 })
     
