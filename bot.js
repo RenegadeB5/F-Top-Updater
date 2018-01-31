@@ -18,7 +18,7 @@ client.on ('message', message => {
         
         message.channel.send(`Testing message.`, {
           files: [
-              'schems\' + schem + '.schematic'
+             schem + '.schematic'
           ]
         })
 
