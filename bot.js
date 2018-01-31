@@ -29,7 +29,7 @@ client.on ('message', message => {
         let schem = args.slice(0).join(" ");
         let file2 = schem + '.schematic'
         let file = '/app/schems/' + file2
-        message.channel.send(`Testing message.`, {
+        message.channel.send(`Here you go.`, {
           files: [
              file
           ]
