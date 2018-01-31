@@ -11,8 +11,8 @@ client.on('ready', () => {
     NOTIFY_CHANNEL = client.channels.find("name", "schems"); // Channel to send notification
    
 client.on ('message', message => {
-  const command = args.shift().toLowerCase();  
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();  
   const testFolder = './tests/';
   const fs = require('fs');
   if (command === "raid") {
