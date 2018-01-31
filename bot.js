@@ -15,7 +15,8 @@ client.on ('message', message => {
   const command = args.shift().toLowerCase();
   if (command === "schem") {
         let schem = args.slice(0).join(" ");
-        let file = schem + '.schematic'
+        let file2 = schem + '.schematic'
+        let file = '/schems/' + file2
         message.channel.send(`Testing message.`, {
           files: [
              file
