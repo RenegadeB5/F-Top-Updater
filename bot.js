@@ -16,7 +16,7 @@ client.on ('message', message => {
   if (command === "schem") {
         let schem = args.slice(0).join(" ");
         let file2 = schem + '.schematic'
-        let file = '/apps/schems/' + file2
+        let file = '/app/schems/' + file2
         message.channel.send(`Testing message.`, {
           files: [
              file
