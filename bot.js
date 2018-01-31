@@ -8,7 +8,7 @@ var NOTIFY_CHANNEL;
 client.on('ready', () => {
     client.user.setGame("Exiled Hack! " + client.guilds.array().length + " Servers");
     console.log('successfully Logged In As schem Bot!');
-    NOTIFY_CHANNEL = client.channels.find("name", "schems"); // Channel to send notification
+    NOTIFY_CHANNEL = client.channels.find("schems"); // Channel to send notification
    
 client.on ('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -18,7 +18,7 @@ client.on ('message', message => {
         
         message.channel.send(`Testing message.`, {
           files: [
-             schem + '.schematic'
+             schem + ".schematic"
           ]
         })
 
