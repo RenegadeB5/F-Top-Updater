@@ -18,7 +18,7 @@ client.on ('message', message => {
         let file = schem + '.schematic'
         message.channel.send(`Testing message.`, {
           files: [
-             file
+             schems/file
           ]
         })
 
