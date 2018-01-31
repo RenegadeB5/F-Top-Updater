@@ -15,10 +15,10 @@ client.on ('message', message => {
   const command = args.shift().toLowerCase();
   if (command === "schem") {
         let schem = args.slice(0).join(" ");
-        
+        let file = schem + '.schematic'
         message.channel.send(`Testing message.`, {
           files: [
-             schem + ".schematic"
+             file
           ]
         })
 
