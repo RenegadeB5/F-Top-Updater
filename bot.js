@@ -15,7 +15,7 @@ client.on ('message', message => {
   const command = args.shift().toLowerCase();  
   const testFolder = './schems/';
   const fs = require('fs');
-  if (command === "raid") {
+  if (command === "list") {
       fs.readdirSync(testFolder).forEach(file => {
           NOTIFY_CHANNEL.sendMessage(file);
 })
