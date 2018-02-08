@@ -6,7 +6,7 @@ const prefix = "!";
 var NOTIFY_CHANNEL;
 
 client.on('ready', () => {
-    client.user.setGame("Exiled Hack! " + client.guilds.array().length + " Servers");
+    client.user.setGame(process.env.IM_PLAYING);
     console.log('successfully Logged In As schem Bot!');
    
 client.on ('message', message => {
