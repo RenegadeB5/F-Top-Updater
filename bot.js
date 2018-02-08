@@ -6,7 +6,7 @@ const prefix = "!";
 var NOTIFY_CHANNEL;
 
 client.on('ready', () => {
-    client.user.setGame(process.env.IM_PLAYING, type: 0);
+    client.user.setPresence({ game: { name: process.inv.IM_PLAYING, type: 0 } });
     console.log('successfully Logged In As schem Bot!');
 });   
 client.on ('message', message => {
