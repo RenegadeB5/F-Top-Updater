@@ -26,9 +26,9 @@ client.on ('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();  
   if (command === "help") {
-    message.channel.send('!list = lists all avalable schematics
-                          !schem "schematic = uploads requested schematic'
-   );
+    message.channel.send('!list = lists all avalable schematics);
+    message.channel.send('!schem "schematic" = uploads requested schematic');
+   
   }
 });
 
