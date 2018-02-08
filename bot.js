@@ -8,7 +8,7 @@ var NOTIFY_CHANNEL;
 client.on('ready', () => {
     client.user.setGame(process.env.IM_PLAYING);
     console.log('successfully Logged In As schem Bot!');
-   
+});   
 client.on ('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();  
@@ -38,7 +38,6 @@ client.on ('message', message => {
                    
                   
   }
-})
 });
 //LOGIN TOKEN-------------------------------------------------------------------
 client.login(process.env.BOT_TOKEN);
