@@ -12,21 +12,20 @@ client.on('ready', () => {
 
 client.on ('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
+  const command = args.shift().toLowerCase();  
+  const testFolder = './schems/';
+  const fs = require('fs');
   if (command === "update") {
-        const testFolder = './schems/';
-        const fs = require('fs');
-        fs.readdirSync(testFolder).forEach(file => {
-          message.channel.send(`Here you go.`, {
-            files: [
+      fs.readdirSync(testFolder).forEach(file => {
+           message.channel.send(`Here you go.`, {
+              files: [
                  file
-            ]}
-        })
-
-                   
-                  
+              ]
+            })
+    
   }
 });
+
 //LOGIN TOKEN-------------------------------------------------------------------
 client.login(process.env.BOT_TOKEN);
 
