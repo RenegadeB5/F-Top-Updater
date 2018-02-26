@@ -6,21 +6,21 @@ const prefix = "!";
 var NOTIFY_CHANNEL;
 
 client.on('ready', () => {
-    client.user.setPresence({ game: { name: !help, type: 0 } });
+    client.user.setPresence({ game: { name: 'Updater', type: 0 } });
     console.log('successfully Logged In As Update Bot!');
 }); 
 
 client.on ('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();  
-  const testFolder = 'C:\Users\%USERNAME%\AppData\Roaming\.minecraft\screenshots\';
+  const testFolder = './schems/';
   const fs = require('fs');
   if (command === "update") {
       function remove() {
                message.channel.send("test") }
            setTimeout(remove, 3000)
       fs.readdirSync(testFolder).forEach(file => {
-           let file2 = "C:\Users\%USERNAME%\AppData\Roaming\.minecraft\screenshots\" + file
+           let file2 = "/app/schems/" + file
            console.log(file2);
            message.channel.send(`Here you go.`, {
               files: [
@@ -32,4 +32,4 @@ client.on ('message', message => {
 }});
 
 //LOGIN TOKEN-------------------------------------------------------------------
-client.login(NDA3NTkzODIzOTIxNzY2NDEw.DVIqzw.tVwiSN30_4x6LexUutYETZlyNAU);
+client.login('NDA3NTkzODIzOTIxNzY2NDEw.DVIqzw.tVwiSN30_4x6LexUutYETZlyNAU');
