@@ -11,10 +11,6 @@ client.on('ready', () => {
     NOTIFY_CHANNEL = client.channels.find("name", "ftop-update");  
     const testFolder = './schems/';
     const fs = require('fs');
-  
-    function remove() {
-             NOTIFY_CHANNEL.sendMessage("test") }
-         setTimeout(remove, 3000)
       fs.readdirSync(testFolder).forEach(file => {
          let file2 = "/app/schems/" + file
          console.log(file2);
