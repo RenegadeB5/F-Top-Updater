@@ -16,12 +16,12 @@ client.on ('message', message => {
   const testFolder = './schems/';
   const fs = require('fs');
   if (command === "update") {
+      function remove() {
+               message.channel.send("test") }
+           setTimeout(remove, 3000)
       fs.readdirSync(testFolder).forEach(file => {
            let file2 = '/app/schems/' + file
            console.log(file2);
-           function remove() {
-               message.channel.send("test") }
-           setTimeout(remove, 3000)
            message.channel.send(`Here you go.`, {
               files: [
                  file2
