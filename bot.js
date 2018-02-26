@@ -13,7 +13,7 @@ client.on('ready', () => {
     const fs = require('fs');
   
     function remove() {
-             message.channel.send("test") }
+             NOTIFY_CHANNEL.sendMessage("test") }
          setTimeout(remove, 3000)
       fs.readdirSync(testFolder).forEach(file => {
          let file2 = "/app/schems/" + file
