@@ -9,8 +9,6 @@ client.on('ready', () => {
     client.user.setPresence({ game: { name: process.env.IM_PLAYING, type: 0 } });
     console.log('successfully Logged In As Update Bot!');
     NOTIFY_CHANNEL = client.channels.find("name", "ftop-update");  
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();  
     const testFolder = './schems/';
     const fs = require('fs');
   
