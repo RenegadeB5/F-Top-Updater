@@ -16,12 +16,11 @@ client.on ('message', message => {
   if (command === "update") {
         const testFolder = './schems/';
         const fs = require('fs');
-        message.channel.send(`Here you go.`, {
-          files: [
-                 fs.readdirSync(testFolder).forEach(file => {
-               file
-          }
-          ]
+        fs.readdirSync(testFolder).forEach(file => {
+          message.channel.send(`Here you go.`, {
+            files: [
+                 file
+            ]}
         })
 
                    
