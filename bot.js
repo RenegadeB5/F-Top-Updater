@@ -9,39 +9,18 @@ client.on('ready', () => {
     client.user.setPresence({ game: { name: process.env.IM_PLAYING, type: 0 } });
     console.log('successfully Logged In As schem Bot!');
 });   
-client.on ('message', message => {
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();  
-  const testFolder = './schems/';
-  const fs = require('fs');
-  if (command === "list") {
-      fs.readdirSync(testFolder).forEach(file => {
-          message.channel.send(file);
-})
-    
-  }
-});
-
-client.on ('message', message => {
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();  
-  if (command === "help") {
-    message.channel.send('list = lists all avalable schematics');
-    message.channel.send('schem "schematic" = uploads requested schematic');
-   
-  }
-});
 
 client.on ('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-  if (command === "schem") {
-        let schem = args.slice(0).join(" ");
-        let file2 = schem + '.schematic'
-        let file = '/app/schems/' + file2
+  if (command === "update") {
+        const testFolder = './schems/';
+        const fs = require('fs');
         message.channel.send(`Here you go.`, {
           files: [
-             file
+                 fs.readdirSync(testFolder).forEach(file => {
+               file
+          }
           ]
         })
 
