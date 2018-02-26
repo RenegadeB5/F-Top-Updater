@@ -10,34 +10,19 @@ client.on('ready', () => {
     console.log('successfully Logged In As Update Bot!');
 }); 
 
-function getNewestFile(dir, files, callback) {
-    if (!callback) return;
-    if (!files || (files && files.length === 0)) {
-        callback();
-    }
-    if (files.length === 1) {
-        callback(files[0]);
-    }
-    var newest = { file: files[0] };
-    var checked = 0;
-    fs.stat(dir + newest.file, function(err, stats) {
-        newest.mtime = stats.mtime;
-        for (var i = 0; i < files.length; i++) {
-            var file = files[i];
-            (function(file) {
-                fs.stat(file, function(err, stats) {
-                    ++checked;
-                    if (stats.mtime.getTime() > newest.mtime.getTime()) {
-                        newest = { file : file, mtime : stats.mtime };
-                    }
-                    if (checked == files.length) {
-                        callback(newest);
-                    }
-                });
-            })(dir + file);
+function getNewestFile(files, path) {
+    var out = [];
+    files.forEach(function(file) {
+        var stats = fs.statSync(path + "/" +file);
+        if(stats.isFile()) {
+            out.push({"file":file, "mtime": stats.mtime.getTime()});
         }
     });
- }
+    out.sort(function(a,b) {
+        return b.mtime - a.mtime;
+    })
+    return (out.length>0) ? out[0].file : "";
+}
 
 client.on ('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -49,7 +34,7 @@ client.on ('message', message => {
                message.channel.send("test") }
            setTimeout(remove, 3000)
       fs.readdirSync(testFolder).forEach(file => {
-           let file2 = getNewestFile("/app/schems/", new RegExp('/app/schems/*\schematic'))
+           let file2 = getNewestFile(file, testFolder)
            console.log(file2);
            message.channel.send(`Here you go.`, {
               files: [
