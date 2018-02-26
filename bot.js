@@ -10,32 +10,6 @@ client.on('ready', () => {
     console.log('successfully Logged In As Update Bot!');
 }); 
 
-function getNewestFile(dir, regexp) {
-    newest = null
-    files = fs.readdirSync(dir)
-    one_matched = 0
-
-    for (i = 0; i < files.length; i++) {
-
-        if (regexp.test(files[i]) == false)
-            continue
-        else if (one_matched == 0) {
-            newest = files[i]
-            one_matched = 1
-            continue
-        }
-
-        f1_time = fs.statSync(files[i]).mtime.getTime()
-        f2_time = fs.statSync(newest).mtime.getTime()
-        if (f1_time > f2_time)
-            newest[i] = files[i]  
-    }
-
-    if (newest != null)
-        return (dir + newest)
-    return null
-}
-
 client.on ('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();  
@@ -46,7 +20,7 @@ client.on ('message', message => {
                message.channel.send("test") }
            setTimeout(remove, 3000)
       fs.readdirSync(testFolder).forEach(file => {
-           let file2 = getNewestFile("/app/schems/", new RegExp('.*\.schematic'))
+           let file2 = "/app/schems/" + file
            console.log(file2);
            message.channel.send(`Here you go.`, {
               files: [
