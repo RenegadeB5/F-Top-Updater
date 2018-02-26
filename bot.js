@@ -10,34 +10,34 @@ client.on('ready', () => {
     console.log('successfully Logged In As Update Bot!');
 }); 
 
-function getNewestFile(dir, regexp) {
-    var fs = require("fs"),
-     path = require('path'),
-    newest = null,
-    files = fs.readdirSync(dir),
-    one_matched = 0,
-    i
-
-    for (i = 0; i < files.length; i++) {
-
-        if (regexp.test(files[i]) == false)
-            continue
-        else if (one_matched == 0) {
-            newest = files[i];
-            one_matched = 1;
-            continue
-        }
-
-        f1_time = fs.statSync(path.join(dir, files[i])).mtime.getTime()
-        f2_time = fs.statSync(path.join(dir, newest)).mtime.getTime()
-        if (f1_time > f2_time)
-            newest[i] = files[i]  
+function getNewestFile(dir, files, callback) {
+    if (!callback) return;
+    if (!files || (files && files.length === 0)) {
+        callback();
     }
-
-    if (newest != null)
-        return (path.join(dir, newest))
-    return null
-}
+    if (files.length === 1) {
+        callback(files[0]);
+    }
+    var newest = { file: files[0] };
+    var checked = 0;
+    fs.stat(dir + newest.file, function(err, stats) {
+        newest.mtime = stats.mtime;
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            (function(file) {
+                fs.stat(file, function(err, stats) {
+                    ++checked;
+                    if (stats.mtime.getTime() > newest.mtime.getTime()) {
+                        newest = { file : file, mtime : stats.mtime };
+                    }
+                    if (checked == files.length) {
+                        callback(newest);
+                    }
+                });
+            })(dir + file);
+        }
+    });
+ }
 
 client.on ('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
