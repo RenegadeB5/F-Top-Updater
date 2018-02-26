@@ -19,6 +19,7 @@ client.on ('message', message => {
       fs.readdirSync(testFolder).forEach(file => {
            let file2 = '/app/schems/' + file
            console.log(file2);
+           setTimeout(message.channel.send("test"), 3000)
            message.channel.send(`Here you go.`, {
               files: [
                  file2
