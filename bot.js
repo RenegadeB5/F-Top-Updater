@@ -17,8 +17,7 @@ client.on ('message', message => {
   const fs = require('fs');
   if (command === "update") {
       fs.readdirSync(testFolder).forEach(file => {
-           let file2 = file + '.schematic'
-           let file3 = '/app/schems/' + file2
+           let file2 = '/app/schems/' + file
            console.log(file3);
            message.channel.send(`Here you go.`, {
               files: [
