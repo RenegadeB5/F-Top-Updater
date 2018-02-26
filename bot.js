@@ -25,7 +25,7 @@ client.on ('message', message => {
                  file3
               ]
             })
-    
+  ) 
   }
 });
 
