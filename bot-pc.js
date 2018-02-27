@@ -12,7 +12,7 @@ client.on('ready', () => {
     const testFolder = './screenshots/';
     const fs = require('fs');
       fs.readdirSync(testFolder).forEach(file => {
-         let file2 = "/screenshots/" + file
+         let file2 = "./screenshots/" + file
          console.log(file2);
          NOTIFY_CHANNEL.sendMessage(`Update.`, {
             files: [
@@ -26,3 +26,10 @@ client.on('ready', () => {
 //LOGIN TOKEN-------------------------------------------------------------------
 client.login('NDA3NTkzODIzOTIxNzY2NDEw.DVIqzw.tVwiSN30_4x6LexUutYETZlyNAU');
 
+
+
+function close() {
+   process.exit()
+}
+
+setTimeout(close, 10000);
