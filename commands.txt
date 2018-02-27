@@ -1,0 +1,5 @@
+npm i -g --production windows-build-tools
+
+cd C:\Users\%username%\AppData\Roaming\.minecraft
+
+npm install discord.js
