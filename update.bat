@@ -6,6 +6,6 @@ node bot-pc.js
 
 timeout /t 1800
 
-del /f *.png
+del /f %cd%\screenshots\*.png
 
 goto start
